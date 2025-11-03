@@ -4,7 +4,7 @@
 #define BUTTON_PIN 2
 
 // Brightness increment step (0~255)
-const uint8_t STEP = 64;  // 5 levels: 0, 64, 128, 192, 255
+const uint8_t STEP = 64;  // 4 levels: 0, 64, 128, 192
 const unsigned long DEBOUNCE_MS = 25;
 
 uint8_t brightness = 0;          // Current brightness 0~255
@@ -26,7 +26,7 @@ void loop() {
     lastChange = now;
     // Detect "button press moment" (HIGH -> LOW falling edge)
     if (reading == LOW && lastBtn == HIGH) {
-      // Each press increases brightness, wraps back to 0 after 255
+      // Each press increases brightness, wraps back to 0 after 192
       brightness = (brightness + STEP) % 256;
       analogWrite(LED_PIN, brightness);
     }
