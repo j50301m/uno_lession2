@@ -1,5 +1,7 @@
 # Arduino LED Brightness Control Project
 
+[中文](README-zh.md)
+
 ## Project Description
 
 This project is designed as an Arduino practice project for learning **button debouncing** techniques and **analog output** functionality.
